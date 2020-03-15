@@ -129,15 +129,6 @@
             </cylinder>
           </geometry>
         </visual>
-
-	<plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-      	<commandTopic>cmd_vel_bl</commandTopic>
-      	<odometryTopic>odom</odometryTopic>
-      	<odometryFrame>odom</odometryFrame>
-      	<odometryRate>20.0</odometryRate>
-      	<robotBaseFrame>wheelbl</robotBaseFrame>
-	</plugin>
-
       </link>
 
       <joint name="wheelbl_to_chassis" type="revolute">
@@ -170,13 +161,7 @@
           </geometry>
         </visual>
 
-	<plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-      	<commandTopic>cmd_vel_br</commandTopic>
-      	<odometryTopic>odom</odometryTopic>
-      	<odometryFrame>odom</odometryFrame>
-      	<odometryRate>20.0</odometryRate>
-      	<robotBaseFrame>wheelbr</robotBaseFrame>
-  	</plugin>
+	
 
       </link>
 
@@ -251,5 +236,13 @@
        <pose> 0 0 0 0 0 0 </pose>
      </joint>
 
+	<plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      	<commandTopic>cmd_vel</commandTopic>
+      	<odometryTopic>odom</odometryTopic>
+      	<odometryFrame>odom</odometryFrame>
+      	<odometryRate>20.0</odometryRate>
+      	<robotBaseFrame>chassis</robotBaseFrame>
+  	</plugin>
+	
     </model>
   </sdf>
